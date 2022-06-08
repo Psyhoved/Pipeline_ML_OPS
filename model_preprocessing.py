@@ -36,6 +36,9 @@ test_prep = prepare_data[-len_test:]
 X, y = train_prep.values, target['polution'].values
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
 
+print(80*'*')
+print('saving train-test splited data in interim folder')
+
 X_train = pd.DataFrame(X_train)
 X_test = pd.DataFrame(X_test)
 y_train = pd.DataFrame(y_train)
