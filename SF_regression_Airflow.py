@@ -94,7 +94,7 @@ def make_prediction():
     print('R2 : %.4f' % r2_score(y_test, y_predict))
 
 
-with DAG(dag_id='test_airflow', default_args=args, shedule_interval=None) as dag:
+with DAG(dag_id='test_airflow', default_args=args, schedule_interval=None) as dag:
     create_dataset = PythonOperator(task_id='create_dataset',
                                     python_callable=create_dataset,
                                     dag=dag)
