@@ -1,5 +1,7 @@
 import pandas as pd
 from model_preprocessing import cut_num_split
+import subprocess
+subprocess.call(['sh', './piplene.sh'])
 
 train = pd.read_csv('data_sets/Train.csv')
 target = pd.read_csv('data_sets/Target.csv')
