@@ -4,17 +4,6 @@ import warnings
 
 warnings.simplefilter("ignore", UserWarning)
 
-
-def cut_num_split(data):
-    cat_columns = ['code', 'year', 'Country', 'id']
-    num_columns = ['tourists', 'venue', 'rate', 'food', 'glass', 'metal', 'other',
-                   'paper', 'plastic', 'leather', 'green_waste', 'waste_recycling']
-    df_num = data[num_columns]
-    df_cat = data[cat_columns]
-
-    return df_cat, df_num
-
-
 print('reading data')
 train = pd.read_csv('data_sets/Train.csv')
 target = pd.read_csv('data_sets/Target.csv')
@@ -24,7 +13,11 @@ print(80 * '*')
 print('preparing data')
 data = pd.concat([train, test])
 
-df_cat, df_num = cut_num_split(data)
+cat_columns = ['code', 'year', 'Country', 'id']
+num_columns = ['tourists', 'venue', 'rate', 'food', 'glass', 'metal', 'other',
+               'paper', 'plastic', 'leather', 'green_waste', 'waste_recycling']
+df_num = data[num_columns]
+df_cat = data[cat_columns]
 
 df_cat['year'] = df_cat['year'].astype('str')
 # one hot encoding

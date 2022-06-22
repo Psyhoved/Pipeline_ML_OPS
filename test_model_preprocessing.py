@@ -1,11 +1,18 @@
 import pandas as pd
-from model_preprocessing import cut_num_split
-import subprocess
-subprocess.call(['sh', './piplene.sh'])
 
-train = pd.read_csv('data_sets/Train.csv')
-target = pd.read_csv('data_sets/Target.csv')
-test = pd.read_csv('data_sets/Test.csv')
+def cut_num_split(data):
+    cat_columns = ['code', 'year', 'Country', 'id']
+    num_columns = ['tourists', 'venue', 'rate', 'food', 'glass', 'metal', 'other',
+                   'paper', 'plastic', 'leather', 'green_waste', 'waste_recycling']
+    df_num = data[num_columns]
+    df_cat = data[cat_columns]
+
+    return df_cat, df_num
+
+
+train = pd.read_csv('https://drive.google.com/file/d/1-4uU9MGJMxpJuCLGJZKjYIHdA8daQXn_/view?usp=sharing')
+target = pd.read_csv('https://drive.google.com/file/d/1-4YBjy125NchD6ityBMNQQH8eTYw_k-q/view?usp=sharing')
+test = pd.read_csv('https://drive.google.com/file/d/1-4j2gKVZtrBtQahQfiw0h1Duoq72Ywwt/view?usp=sharing')
 
 print(80 * '*')
 print('preparing data')
