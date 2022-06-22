@@ -2,8 +2,8 @@ import pandas as pd
 
 
 def test_cut_num_split():
-    train = pd.read_csv('https://www.dropbox.com/s/o1jmfe26ri31k3l/Train.csv?dl=1')
-    test = pd.read_csv('https://www.dropbox.com/s/qyajy9n51foaa69/Test.csv?dl=1')
+    train = pd.read_csv('data_sets/Train.csv')
+    test = pd.read_csv(r'data_sets/Test.csv')
 
     data = pd.concat([train, test])
 

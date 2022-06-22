@@ -14,3 +14,4 @@ print('Ошибка на тестовых данных')
 print('MSE: %.1f' % mse(y_test, y_predict))
 print('RMSE: %.1f' % mse(y_test, y_predict, squared=False))
 print('R2 : %.4f' % r2_score(y_test, y_predict))
+
