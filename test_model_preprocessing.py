@@ -2,8 +2,8 @@ import pandas as pd
 
 
 def test_cut_num_split():
-    train = pd.read_csv('data_sets/Train.csv')
-    test = pd.read_csv(r'data_sets/Test.csv')
+    train = pd.read_csv('projects/SF_regression/data_sets/data_sets/Train.csv')
+    test = pd.read_csv(r'projects/SF_regression/data_sets/data_sets/Test.csv')
 
     data = pd.concat([train, test])
 
